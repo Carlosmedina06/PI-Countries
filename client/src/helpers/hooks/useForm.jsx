@@ -25,6 +25,18 @@ export const useForm = (initialForm, validateForm) => {
       [evt.target.name]: evt.target.value,
     })
   }
+  const handleSelect = (id) => {
+    setForm({
+      ...form,
+      countryId: [...form.countryId, id.target.value],
+    })
+  }
+  const handleDelete = (evt) => {
+    setForm({
+      ...form,
+      countryId: form.countryId.filter((c) => c !== evt),
+    })
+  }
 
   return {
     form,
@@ -32,5 +44,7 @@ export const useForm = (initialForm, validateForm) => {
     handleSubmit,
     handleBlur,
     handleChange,
+    handleSelect,
+    handleDelete,
   }
 }

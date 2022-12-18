@@ -7,7 +7,15 @@ import { useForm } from '../../helpers/hooks/useForm'
 import Form from '../Form/Form'
 
 const FormContainer = () => {
-  const countries = useSelector((state) => state.countries)
+  const countries = useSelector((state) => state.countries).sort((a, b) => {
+    if (a.name < b.name) {
+      return -1
+    }
+    if (a.name > b.name) {
+      return 1
+    }
+    return 0
+  })
   const dispatch = useDispatch()
   const season = ['Summer', 'Spring', 'Autumn', 'Winter']
   const initialForm = {
@@ -46,15 +54,19 @@ const FormContainer = () => {
 
     return errors
   }
-
   useEffect(() => {
     dispatch(getCountries())
   }, [dispatch])
 
-  const { form, errors, handleBlur, handleSubmit, handleChange } = useForm(
-    initialForm,
-    validationsForm
-  )
+  const {
+    form,
+    errors,
+    handleBlur,
+    handleSubmit,
+    handleChange,
+    handleSelect,
+    handleDelete,
+  } = useForm(initialForm, validationsForm)
   return (
     <StyleFormContainer>
       <Form
@@ -63,6 +75,8 @@ const FormContainer = () => {
         handleBlur={handleBlur}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        handleSelect={handleSelect}
+        handleDelete={handleDelete}
         season={season}
         countries={countries}
       />

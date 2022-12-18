@@ -80,9 +80,7 @@ export const createAct = (input) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         dispatch({
-          type: POST_ACTIVITY,
           payload: data,
         })
       })

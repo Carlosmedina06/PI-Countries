@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyleNavbar = styled.div`
+export const StyleNavbar = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
