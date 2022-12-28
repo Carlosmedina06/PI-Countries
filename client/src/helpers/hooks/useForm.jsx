@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 
 import { createAct } from '../../redux/actions'
@@ -7,14 +8,18 @@ export const useForm = (initialForm, validateForm) => {
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
     setErrors(validateForm(form))
     if (Object.keys(errors).length === 0) {
       dispatch(createAct(form))
+      alert('Actividad creada')
+      history.push('/countries')
     }
   }
+
   const handleBlur = (evt) => {
     handleChange(evt)
     setErrors(validateForm(form))

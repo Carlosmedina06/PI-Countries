@@ -10,13 +10,13 @@ const Navbar = () => {
     <StyleNavbar>
       <nav>
         <div>
-          <Link to="/home">
+          <Link to="/countries">
             <FcGlobe />
             Carlos Medina
           </Link>
         </div>
         <div>
-          <Link to="/home">Home</Link>
+          <Link to="/countries">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/create">Add Activity</Link>
           <button>

@@ -3,8 +3,12 @@ import axios from 'axios'
 export const GET_COUNTRIES = 'GET_COUNTRIES'
 export const GET_DETAIL = 'GET_DETAIL'
 export const GET_ACTIVITIES = 'GET_ACTIVITIES'
-export const GET_NAME = 'GET_NAME'
+export const SEARCH_COUNTRIES = 'SEARCH_COUNTRIES'
 export const POST_ACTIVITY = 'POST_ACTIVITY'
+export const BY_CONTINENT = 'BY_CONTINENT'
+export const BY_ACTIVITY = 'BY_ACTIVITY'
+export const BY_ORDER = 'BY_ORDER'
+export const BY_POPULATION = 'BY_POPULATION'
 
 // Todos los paises
 export const getCountries = () => {
@@ -23,17 +27,20 @@ export const getCountries = () => {
   }
 }
 // Paises por nombre
-export function getNames(name) {
-  return async (dispatch) => {
+export function searchCountries(search) {
+  return async function (dispatch) {
     try {
-      const res = await axios.get(
-        `http://localhost:3001/countries?name=${name}`
-      )
-      dispatch({ type: GET_NAME, payload: res.data })
+      var json = await axios.get(
+        "http://localhost:3001/countries?name=" + search
+      );
+      return dispatch({
+        type: SEARCH_COUNTRIES,
+        payload: json.data,
+      });
     } catch (error) {
-      console.log(error)
+      alert("Country not found");
     }
-  }
+  };
 }
 // Paises por id
 export const getDetail = (id) => {
@@ -81,9 +88,36 @@ export const createAct = (input) => {
       .then((res) => res.json())
       .then((data) => {
         dispatch({
+          type: POST_ACTIVITY,
           payload: data,
         })
       })
       .catch((err) => console.log(err))
+  }
+}
+export function byActivity(payload) {
+  return {
+    type: BY_ACTIVITY,
+    payload,
+  }
+}
+
+export function byPopulation(payload) {
+  return {
+    type: BY_POPULATION,
+    payload,
+  }
+}
+
+export function byContinent(payload) {
+  return {
+    type: BY_CONTINENT,
+    payload,
+  }
+}
+export function byOrder(payload) {
+  return {
+    type: BY_ORDER,
+    payload,
   }
 }
