@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom'
 import { StyleCard } from './CardStyle'
 
 const Card = ({ name, flags, continents, capital, id }) => {
-
-
-
-  
   return (
     <StyleCard>
       <Link to={`/countries/${id}`}>

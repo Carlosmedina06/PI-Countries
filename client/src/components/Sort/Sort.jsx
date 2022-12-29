@@ -1,8 +1,9 @@
 import React from 'react'
+import { SortStyle } from './SortStyle'
 
 const Sort = ({ handleOrder, handleMax }) => {
   return (
-    <div>
+    <SortStyle>
       <h4>SORT</h4>
       <label htmlFor="atoz">Alphabeticaly</label>
       <select id="atoz" onChange={handleOrder}>
@@ -16,7 +17,7 @@ const Sort = ({ handleOrder, handleMax }) => {
         <option value="MAX">Max Population</option>
         <option value="MIN">Min Population</option>
       </select>
-    </div>
+    </SortStyle>
   )
 }
 

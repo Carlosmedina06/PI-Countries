@@ -1,16 +1,16 @@
 import React from 'react'
+import { SearchStyle} from './SearchStyle.js'
 
-const Search = ({ handleSearch, result, search }) => {
+const Search = ({search, handleSearch}) => {
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="find your country"
-        onChange={handleSearch}
-      />
-      {result.length && search ? <p>countries: {result.length}</p> : <></>}
-      {!result.length && search ? <p>Country not Found</p> : <></>}
-    </div>
+    <SearchStyle>
+            <input
+          type="text"
+          placeholder="Find your country 🔍"
+          value={search}
+          onChange={handleSearch}
+        />
+    </SearchStyle>
   )
 }
 

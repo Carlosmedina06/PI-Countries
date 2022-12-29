@@ -1,11 +1,12 @@
 import React from 'react'
+import { StyledFiltro } from './FilterStyle'
 
 
-const Filter = ({ activities, handleActivity, handleContinent ,result }) => {
+const Filter = ({ activities, handleActivity, handleContinent, filterCountries }) => {
 
 
   return (
-    <div>
+    <StyledFiltro>
       <h4>Filter</h4>
       <label htmlFor="act">Activities</label>
       <select id="act" onChange={handleActivity}>
@@ -23,7 +24,7 @@ const Filter = ({ activities, handleActivity, handleContinent ,result }) => {
       <label htmlFor="cont"> Continents</label>
       <select id="cont" onChange={handleContinent}>
       <option value="All">All Continents</option>
-        {result.length ? (
+        {filterCountries().length ? (
           <>
           <option value='Africa' key='Africa'>Africa</option>
           <option value='Antarctica' key='Antarctica'>Antarctica</option>
@@ -37,7 +38,7 @@ const Filter = ({ activities, handleActivity, handleContinent ,result }) => {
           <option>Continent not found</option>
         )}
       </select>
-    </div>
+    </StyledFiltro>
   )
 }
 

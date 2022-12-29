@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import Navbar from '../Navbar/Navbar'
 import { StyleLayout } from './LayoutStyle'
 
