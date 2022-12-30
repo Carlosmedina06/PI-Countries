@@ -1,44 +1,54 @@
-import { Link } from 'react-router-dom'
-import { FcGlobe } from 'react-icons/fc'
-import { RiGithubFill, RiLinkedinBoxFill } from 'react-icons/ri'
-import React from 'react'
-
-import { StyleNavbar } from './NavbarStyle'
+import React, { useState } from "react";
+import {
+  Container,
+  LogoContainer,
+  Wrapper,
+  Menu,
+  MenuItem,
+  MenuItemLink,
+  MobileIcon,
+} from "./NavbarStyle.js";
+import {
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FcGlobe } from "react-icons/fc";
 
 const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
-    <StyleNavbar>
-      <nav>
-        <div>
+    <Container>
+      <Wrapper>
+          <LogoContainer>
           <Link to="/countries">
             <FcGlobe />
             Carlos Medina
           </Link>
-        </div>
-        <div>
-          <a
-            href="https://www.linkedin.com/in/carlosmedina06/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <RiLinkedinBoxFill />
-          </a>
+          </LogoContainer>
+          <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+            {showMobileMenu ? <FaTimes /> : <FaBars />}
+          </MobileIcon>
+          <Menu open={showMobileMenu}>
+            <MenuItem>
+              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <Link to='/countries'>
+                  Home
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <Link to='/create'>
+                  Add Activity
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+          </Menu>
+      </Wrapper>
+    </Container>
+  );
+};
 
-          <a
-            href="https://github.com/carlosmedina06"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <RiGithubFill />
-          </a>
-        </div>
-        <div>
-          <Link to="/countries">Home</Link>
-          <Link to="/create">Add Activity</Link>
-        </div>
-      </nav>
-    </StyleNavbar>
-  )
-}
-
-export default Navbar
+export default Navbar;
