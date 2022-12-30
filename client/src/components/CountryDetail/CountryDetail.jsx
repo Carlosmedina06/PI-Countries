@@ -50,7 +50,7 @@ const CountryDetail = ({
             activities.map((e) => (
               <Found key={e.id}>
                 <p>Name: {e.name}</p>
-                <p>Difficult: {e.difficult}</p>
+                <p>Difficulty: {e.difficult}</p>
                 <p>Duration: {e.duration}h</p>
                 <p>Season: {e.season}</p>
               </Found>

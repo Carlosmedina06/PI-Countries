@@ -1,7 +1,7 @@
 import React from 'react'
-import { SearchStyle} from './SearchStyle.js'
+import {SearchStyle} from './SearchStyle.js'
 
-const Search = ({search, handleSearch}) => {
+const Search = ({search, handleSearch, filterCountries}) => {
   return (
     <SearchStyle>
             <input
@@ -10,6 +10,7 @@ const Search = ({search, handleSearch}) => {
           value={search}
           onChange={handleSearch}
         />
+        {!filterCountries().length ? <p>Country not found 😦</p> : null}
     </SearchStyle>
   )
 }

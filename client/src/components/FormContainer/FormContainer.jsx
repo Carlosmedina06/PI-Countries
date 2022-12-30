@@ -25,31 +25,32 @@ const FormContainer = () => {
     season: '',
     countryId: [],
   }
+  //validate form
   const validationsForm = (form) => {
     let errors = {}
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/
 
     if (!form.name.trim()) {
-      errors.name = 'el campo name es requerido'
+      errors.name = 'the name field is required 😠'
     } else if (!regexName.test(form.name.trim())) {
-      errors.name = 'el campo name solo acepta letras y espacios en blanco'
+      errors.name = 'the name field only accepts letters and whitespace 😵‍💫'
     }
 
     if (!form.difficult) {
-      errors.difficult = 'el campo difficult es requerido'
+      errors.difficult = 'the difficulty field is required 😠'
     } else if (form.difficult > 5 || form.difficult < 1) {
-      errors.difficult = 'solo se aceptan valores del 1 al 5'
+      errors.difficult = 'only values from 1 to 5 are accepted 😵‍💫'
     }
     if (!form.duration) {
-      errors.duration = 'el campo duration es requerido'
+      errors.duration = 'the duration field is required 😠'
     } else if (form.duration > 24 || form.duration < 1) {
-      errors.duration = 'solo se aceptan valores del 1 al 24'
+      errors.duration = 'only values from 1 to 24 are accepted 😵‍💫'
     }
     if (!form.season) {
-      errors.season = 'el campo season es requerido'
+      errors.season = 'the season field is required 😠'
     }
     if (!form.countryId) {
-      errors.countryId = 'el campo country  es requerido'
+      errors.countryId = 'the country field is required 😠'
     }
 
     return errors

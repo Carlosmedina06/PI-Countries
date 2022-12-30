@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
+import Swal from 'sweetalert2'
 
 import { createAct } from '../../redux/actions'
 
@@ -9,13 +10,19 @@ export const useForm = (initialForm, validateForm) => {
   const [errors, setErrors] = useState({})
   const dispatch = useDispatch()
   const history = useHistory()
+ 
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
     setErrors(validateForm(form))
     if (Object.keys(errors).length === 0) {
       dispatch(createAct(form))
-      alert('Actividad creada')
+      Swal.fire({
+        icon: 'success',
+        title: 'Activity Created',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       history.push('/countries')
     }
   }

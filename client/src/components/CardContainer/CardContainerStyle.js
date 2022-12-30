@@ -12,6 +12,7 @@ export const CartaContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 4rem;
 `
 export const Filtros = styled.div`
   display: flex;

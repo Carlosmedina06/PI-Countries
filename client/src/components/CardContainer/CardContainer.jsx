@@ -98,7 +98,8 @@ const CardContainer = () => {
 
   return (
     <Container>
-      <Search search={search} handleSearch={handleSearch} />
+      <Search search={search} handleSearch={handleSearch} filterCountries={filterCountries} />
+      {}
       <Filtros>
         <Sort handleOrder={handleOrder} handleMax={handleMax} />
         <Filter
@@ -108,7 +109,7 @@ const CardContainer = () => {
           filterCountries={filterCountries}
         />
       </Filtros>
-      <BtnReset onClick={reloadButton}>Recargar Countries...</BtnReset>
+      <BtnReset onClick={reloadButton}>Recargar Countries ↺</BtnReset>
       <CartaContainer>
         {!filterCountries().length & !search ? (
           <Loading/>

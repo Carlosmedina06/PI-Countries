@@ -33,7 +33,7 @@ const rootReducer = (state = initialState, action) => {
     case SEARCH_COUNTRIES:
       return {
         ...state,
-        countries: action.payload
+        countries: action.payload,
       }
     case GET_ACTIVITIES: {
       return { ...state, activities: action.payload }
@@ -84,9 +84,14 @@ const rootReducer = (state = initialState, action) => {
       }
     }
     case BY_CONTINENT:
-      return{
+      return {
         ...state,
-        countries: action.payload === 'All' ? state.allCountries :state.allCountries.filter((country) => country.continents === action.payload),
+        countries:
+          action.payload === 'All'
+            ? state.allCountries
+            : state.allCountries.filter(
+                (country) => country.continents === action.payload
+              ),
       }
     case BY_POPULATION: {
       if (action.payload === 'MIN') {
