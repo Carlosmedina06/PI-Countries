@@ -33,4 +33,11 @@ export const StyledFiltro = styled.div`
       color: #f3f3f4;
     }
   }
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+
+
 `

@@ -18,6 +18,10 @@ import { FcGlobe } from "react-icons/fc";
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  const ShowMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  }
+
   return (
     <Container>
       <Wrapper>
@@ -27,12 +31,12 @@ const Navbar = () => {
             Carlos Medina
           </Link>
           </LogoContainer>
-          <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+          <MobileIcon onClick={ShowMobileMenu}>
             {showMobileMenu ? <FaTimes /> : <FaBars />}
           </MobileIcon>
           <Menu open={showMobileMenu}>
             <MenuItem>
-              <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              <MenuItemLink onClick={ShowMobileMenu}>
                 <Link to='/countries'>
                   Home
                 </Link>

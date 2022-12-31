@@ -29,6 +29,7 @@ export const LandingHeader = styled.div`
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 10px 50px;
+  user-select: none;
 `
 export const BtnLanding = styled.button`
   background: #fff;

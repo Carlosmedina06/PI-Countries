@@ -7,4 +7,5 @@ export const StyleCountryDetailContainer = styled.div`
   justify-content: center;
   width: 70%;
   padding: 30px;
+  margin-bottom: 70px;
 `

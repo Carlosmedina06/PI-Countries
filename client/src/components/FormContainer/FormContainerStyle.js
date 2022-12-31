@@ -15,4 +15,5 @@ export const StyleFormContainer = styled.div`
   color: #07484a;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  margin-bottom: 70px;
 `
