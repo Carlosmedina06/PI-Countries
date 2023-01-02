@@ -41,7 +41,7 @@ const Form = ({
         required
       ></input>
       {errors.difficult && <p>{errors.difficult}</p>}
-      <label htmlFor="duration">Duration: </label>
+      <label htmlFor="duration">Duration (in hours): </label>
       <input
         id="duration"
         type="number"

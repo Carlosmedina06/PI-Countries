@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, FooterContent, Footerheader } from './Footer.js'
+import { Container, FooterContent, Footerheader } from './FooterStyle.js'
 import { RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
 
 const Footer = () => {
@@ -10,10 +10,10 @@ const Footer = () => {
       </Footerheader>
       <FooterContent>
         <a href="https://github.com/carlosmedina06">
-          <RxGithubLogo/>
+          <RxGithubLogo />
         </a>
         <a href="https://www.linkedin.com/in/carlosmedina06/">
-          <RxLinkedinLogo/>
+          <RxLinkedinLogo />
         </a>
       </FooterContent>
       <FooterContent>
@@ -22,5 +22,6 @@ const Footer = () => {
     </Container>
   )
 }
+
 
 export default Footer
