@@ -61,7 +61,7 @@ export const getDetail = (id) => {
 // Todas las Actividades
 export const getActivities = () => {
   return function (dispatch) {
-    fetch('https://pi-countries-production-7366.up.railway.app1/activities')
+    fetch('https://pi-countries-production-7366.up.railway.app/activities')
       .then((response) => {
         return response.json()
       })
