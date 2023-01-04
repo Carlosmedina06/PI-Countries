@@ -19,7 +19,7 @@ const getCountries = async (req, res) => {
         ? res.status(200).json(results)
         : res.status(404).send({ message: 'Country not found' })
     }
-    let results = name ? await findCountriesByName() : await loadDB() // getAllCountries() 
+    let results = name ? await findCountriesByName() : await getAllCountries() //loadDB() 
     return res.status(200).json(results)
   } catch (error) {
     return res.status(400).send({ error: error.message })
