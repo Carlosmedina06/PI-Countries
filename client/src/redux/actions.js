@@ -13,7 +13,7 @@ export const BY_POPULATION = 'BY_POPULATION'
 // Todos los paises
 export const getCountries = () => {
   return function (dispatch) {
-    fetch('pi-countries-production-7366.up.railway.app/countries')
+    fetch('https://pi-countries-production-7366.up.railway.app/countries')
       .then((response) => {
         return response.json()
       })
