@@ -74,10 +74,10 @@ const rootReducer = (state = initialState, action) => {
         action.payload === 'All'
           ? allCountriesAct
           : allCountriesAct.filter(
-              (country) =>
-                country.activities &&
-                country.activities.map((e) => e.name).includes(action.payload)
-            )
+            (country) =>
+              country.activities &&
+              country.activities.map((e) => e.name).includes(action.payload)
+          )
       return {
         ...state,
         countries: activitiesFilter,
@@ -90,8 +90,8 @@ const rootReducer = (state = initialState, action) => {
           action.payload === 'All'
             ? state.allCountries
             : state.allCountries.filter(
-                (country) => country.continents === action.payload
-              ),
+              (country) => country.continents === action.payload
+            ),
       }
     case BY_POPULATION: {
       if (action.payload === 'MIN') {
