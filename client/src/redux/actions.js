@@ -13,7 +13,7 @@ export const BY_POPULATION = 'BY_POPULATION'
 // Todos los paises
 export const getCountries = () => {
   return function (dispatch) {
-    fetch('http://localhost:3001/countries')
+    fetch('pi-countries-production-7366.up.railway.app/countries')
       .then((response) => {
         return response.json()
       })
@@ -31,7 +31,7 @@ export function searchCountries(search) {
   return async function (dispatch) {
     try {
       var json = await axios.get(
-        "http://localhost:3001/countries?name=" + search
+        "https://pi-countries-production-7366.up.railway.app/countries?name=" + search
       );
       return dispatch({
         type: SEARCH_COUNTRIES,
@@ -45,7 +45,7 @@ export function searchCountries(search) {
 // Paises por id
 export const getDetail = (id) => {
   return function (dispatch) {
-    fetch(`http://localhost:3001/countries/${id}`)
+    fetch(`https://pi-countries-production-7366.up.railway.app/countries/${id}`)
       .then((response) => {
         return response.json()
       })
@@ -61,7 +61,7 @@ export const getDetail = (id) => {
 // Todas las Actividades
 export const getActivities = () => {
   return function (dispatch) {
-    fetch('http://localhost:3001/activities')
+    fetch('https://pi-countries-production-7366.up.railway.app1/activities')
       .then((response) => {
         return response.json()
       })
@@ -78,7 +78,7 @@ export const getActivities = () => {
 // Crear Actividad
 export const createAct = (input) => {
   return function (dispatch) {
-    fetch('http://localhost:3001/activities', {
+    fetch('https://pi-countries-production-7366.up.railway.app/activities', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
